@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		7A13A0AA1E95392A001E1307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0A91E95392A001E1307 /* AppDelegate.swift */; };
-		7A13A0AC1E95392A001E1307 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0AB1E95392A001E1307 /* ViewController.swift */; };
 		7A13A0AF1E95392A001E1307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A13A0AD1E95392A001E1307 /* Main.storyboard */; };
 		7A13A0B11E95392A001E1307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A13A0B01E95392A001E1307 /* Assets.xcassets */; };
 		7A13A0B41E95392A001E1307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A13A0B21E95392A001E1307 /* LaunchScreen.storyboard */; };
+		7A13A0BD1E953970001E1307 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0BC1E953970001E1307 /* ImageViewController.swift */; };
+		7A13A0BF1E953B9A001E1307 /* CassiniURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0BE1E953B9A001E1307 /* CassiniURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7A13A0A61E95392A001E1307 /* Cassini2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cassini2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A13A0A91E95392A001E1307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7A13A0AB1E95392A001E1307 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A13A0AE1E95392A001E1307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A13A0B01E95392A001E1307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A13A0B31E95392A001E1307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A13A0B51E95392A001E1307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A13A0BC1E953970001E1307 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		7A13A0BE1E953B9A001E1307 /* CassiniURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniURL.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		7A13A0A81E95392A001E1307 /* Cassini2 */ = {
 			isa = PBXGroup;
 			children = (
-				7A13A0A91E95392A001E1307 /* AppDelegate.swift */,
-				7A13A0AB1E95392A001E1307 /* ViewController.swift */,
+				7A13A0BC1E953970001E1307 /* ImageViewController.swift */,
+				7A13A0BE1E953B9A001E1307 /* CassiniURL.swift */,
 				7A13A0AD1E95392A001E1307 /* Main.storyboard */,
+				7A13A0BB1E953935001E1307 /* Supporting Files */,
+			);
+			path = Cassini2;
+			sourceTree = "<group>";
+		};
+		7A13A0BB1E953935001E1307 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7A13A0A91E95392A001E1307 /* AppDelegate.swift */,
 				7A13A0B01E95392A001E1307 /* Assets.xcassets */,
 				7A13A0B21E95392A001E1307 /* LaunchScreen.storyboard */,
 				7A13A0B51E95392A001E1307 /* Info.plist */,
 			);
-			path = Cassini2;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A13A0AC1E95392A001E1307 /* ViewController.swift in Sources */,
+				7A13A0BD1E953970001E1307 /* ImageViewController.swift in Sources */,
+				7A13A0BF1E953B9A001E1307 /* CassiniURL.swift in Sources */,
 				7A13A0AA1E95392A001E1307 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
