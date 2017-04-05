@@ -13,6 +13,7 @@
 		7A13A0B41E95392A001E1307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A13A0B21E95392A001E1307 /* LaunchScreen.storyboard */; };
 		7A13A0BD1E953970001E1307 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0BC1E953970001E1307 /* ImageViewController.swift */; };
 		7A13A0BF1E953B9A001E1307 /* CassiniURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0BE1E953B9A001E1307 /* CassiniURL.swift */; };
+		7A13A0C31E954451001E1307 /* CassiniViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A13A0C21E954451001E1307 /* CassiniViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7A13A0B51E95392A001E1307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A13A0BC1E953970001E1307 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		7A13A0BE1E953B9A001E1307 /* CassiniURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniURL.swift; sourceTree = "<group>"; };
+		7A13A0C21E954451001E1307 /* CassiniViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CassiniViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		7A13A0A81E95392A001E1307 /* Cassini2 */ = {
 			isa = PBXGroup;
 			children = (
+				7A13A0C21E954451001E1307 /* CassiniViewController.swift */,
 				7A13A0BC1E953970001E1307 /* ImageViewController.swift */,
 				7A13A0BE1E953B9A001E1307 /* CassiniURL.swift */,
 				7A13A0AD1E95392A001E1307 /* Main.storyboard */,
@@ -151,6 +154,7 @@
 				7A13A0BD1E953970001E1307 /* ImageViewController.swift in Sources */,
 				7A13A0BF1E953B9A001E1307 /* CassiniURL.swift in Sources */,
 				7A13A0AA1E95392A001E1307 /* AppDelegate.swift in Sources */,
+				7A13A0C31E954451001E1307 /* CassiniViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,10 +279,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S2RSVRNML;
 				INFOPLIST_FILE = Cassini2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ro.iliemarius.Cassini2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -288,10 +294,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2S2RSVRNML;
 				INFOPLIST_FILE = Cassini2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ro.iliemarius.Cassini2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

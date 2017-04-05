@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ImageViewController: UIViewController {
-
+class ImageViewController: UIViewController
+{
     var imageURL: URL? {
         didSet {
             image = nil
@@ -19,16 +19,50 @@ class ImageViewController: UIViewController {
         }
     }
     
-    func fetchImage() {
+    private func fetchImage() {
         if let url = imageURL {
-            let urlContents = try? Data(contentsOf: url)
-            if let imageData = urlContents {
-                image = UIImage(data: imageData)
+            spinner?.startAnimating()
+            DispatchQueue.global(qos: .userInteractive).async {
+                let urlContents = try? Data(contentsOf: url)
+                if let imageData = urlContents, url == self.imageURL {
+                    DispatchQueue.main.async {
+                        self.image = UIImage(data: imageData)
+                    }
+                }
             }
         }
     }
     
-    private var imageView = UIImageView()
+    func onDoubleTapOrLongPress() {
+        if scrollView.zoomScale == scrollView.maximumZoomScale {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        } else if scrollView.zoomScale == scrollView.minimumZoomScale {
+            scrollView.setZoomScale(scrollView.maximumZoomScale, animated: true)
+        }
+    }
+    
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.delegate = self
+            scrollView.addSubview(imageView)
+            
+            scrollView.minimumZoomScale = 0.03
+            scrollView.maximumZoomScale = 1.0
+            
+            scrollView.contentSize = imageView.frame.size
+            
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(onDoubleTapOrLongPress))
+            doubleTap.numberOfTapsRequired = 2
+            
+            let longPress = UILongPressGestureRecognizer(target: self, action: #selector(onDoubleTapOrLongPress))
+            
+            scrollView.addGestureRecognizer(doubleTap)
+            scrollView.addGestureRecognizer(longPress)
+        }
+    }
+    
+    fileprivate var imageView = UIImageView()
     
     var image: UIImage? {
         get {
@@ -37,14 +71,11 @@ class ImageViewController: UIViewController {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
+            
+            scrollView?.contentSize = imageView.frame.size
+            
+            spinner?.stopAnimating()
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.addSubview(imageView)
-        
-        imageURL = CassiniURL.NASAImage(named: "Bucharest")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -53,5 +84,10 @@ class ImageViewController: UIViewController {
             fetchImage()
         }
     }
+}
 
+extension ImageViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageView
+    }
 }
